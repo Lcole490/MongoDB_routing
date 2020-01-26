@@ -34,7 +34,10 @@ router.get("/users/:id", function(req, res, next){
 
 
 // Delete a user from the database
-router.get("/users/:id", function(req, res, next){
+router.delete("/users/:id", function(req, res, next){
+    User.findByIdAndDelete({_id: req.params.id}).then(function(user){
+        res.send(user);
+    });
     res.send({type: "DELETE"});
 });
 
