@@ -20,7 +20,10 @@ mongoose.connect("mongodb://localhost/recipesdb",
 
 mongoose.Promise = global.Promise;
 
-app.use(bodyParser.json());
+// app.use(bodyParser.json());
+
+app.use(express.json());
+
 
 //Initialize routes
 app.use("/api", routes); // Adding "/api" allows for ommission in api route filenames from api.js 
