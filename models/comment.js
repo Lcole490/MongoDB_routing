@@ -1,35 +1,27 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-
-
 // Create Comment Schema and Model
 
+const CommentSchema = new Schema({
+  recipeId: {
+    type: Number
+  },
 
-const CommentSchema = new Schema ({
-    recipeId: {
-        type: Number
-    },
+  text: {
+    type: String
+  },
 
-    text: {
-        type: String
-    },
+  user_id: {
+    type: Schema.Types.ObjectId
+  },
 
-    userId: {
-        type: Number
-    },
-
-    dateAdded: {
-        type: Date,
-        default: Date.now
-    }
+  dateAdded: {
+    type: Date,
+    default: Date.now
+  }
 });
-
-
-
-
-
 
 const Comment = mongoose.model("comment", CommentSchema);
 
-module.exports = Comment; 
+module.exports = Comment;

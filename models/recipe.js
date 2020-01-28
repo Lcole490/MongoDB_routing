@@ -1,47 +1,43 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-
 // Create Recipe Schema and Model
 
+const RecipeSchema = new Schema({
+  title: {
+    type: String
+  },
 
-const RecipeSchema = new Schema ({
-    title: {
-        type: String
-    },
+  categoryId: {
+    type: Number
+  },
 
-    categoryId: {
-        type: Number
-    },
+  mainIngredient: {
+    type: String
+  },
 
-    mainIngredient: {
-        type: String
-    },
+  ingredients: {
+    type: String
+  },
 
-    ingredients: {
-        type: String
-    },
+  directions: {
+    type: String
+  },
 
-    directions: {
-        type: String
-    },
+  likes: {
+    type: Number
+  },
 
-    likes: {
-        type: Number
-    },
+  userId: {
+    type: Number
+  },
 
-    userId: {
-        type: Number
-    },
-
-    dateAdded: {
-        type: Date,
-        default: Date.now
-    }
+  dateAdded: {
+    type: Date,
+    default: Date.now
+  }
 });
-
-
 
 const Recipe = mongoose.model("recipe", RecipeSchema);
 
-module.exports = Recipe; 
+module.exports = Recipe;
